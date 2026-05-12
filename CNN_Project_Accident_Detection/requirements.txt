@@ -1,62 +1,11 @@
-# ==============================================================
-#  AccidentAI — CCTV Accident Detection
-#  requirements.txt  |  Python 3.11  |  Windows
-#
-#  IMPORTANT: Your .keras models were saved with Keras 3 (TF 2.16+).
-#  They CANNOT be loaded with TF 2.15. This file uses TF 2.16.1.
-#
-#  Install (clean):
-#    pip uninstall tensorflow keras tf-keras -y
-#    pip install -r requirements.txt --no-cache-dir
-#
-#  GPU (optional):
-#    Replace tensorflow==2.16.1 with tensorflow[and-cuda]==2.16.1
-# ==============================================================
-
-
-# ── Deep Learning ───────────────────────────────────────────────
-# TF 2.16.1: matches the version used to TRAIN and SAVE your models.
-# Your .keras files use keras.src.models.functional (Keras 3 internal
-# path) which only exists in Keras 3 — not in TF 2.15's bundled keras.
-tensorflow==2.16.1
-keras==3.3.3
-
-# tf-keras: compatibility shim that re-exports `from tensorflow import keras`
-# so the old-style import works on TF 2.16+ without changing app.py.
 tf-keras==2.16.0
-
-
-# ── Streamlit & UI ──────────────────────────────────────────────
-# streamlit-option-menu==0.4.0 requires streamlit>=1.36
 streamlit==1.36.0
 streamlit-option-menu==0.4.0
-
-
-# ── Computer Vision ─────────────────────────────────────────────
-# Headless: no Qt/GTK — safe for servers and Streamlit Cloud.
 opencv-python-headless==4.9.0.80
-
-# Augmentation transforms: ImageEnhance, ImageFilter used in app.py
 Pillow==10.3.0
-
-
-# ── Numerical Computing ─────────────────────────────────────────
-# numpy 1.26.x: TF 2.16 supports numpy <2.0 on Python 3.11
 numpy==1.26.4
-
-
-# ── Data Handling ───────────────────────────────────────────────
 pandas==2.2.2
-
-
-# ── Machine Learning Metrics ────────────────────────────────────
 scikit-learn==1.5.0
-
-
-# ── Plotting & Visualisation ────────────────────────────────────
 matplotlib==3.9.0
 seaborn==0.13.2
-
-
-# ── Standard Library (built into Python 3.11 — no install needed) ──
-# os, io, time, tempfile, warnings, zipfile, glob
+gdown
