@@ -35,7 +35,8 @@ import tensorflow as tf
 
 import tensorflow as tf
 import keras
-
+import gdown
+import zipfile
 #=========================================== gdown code
 @st.cache_resource
 def download_and_extract():
@@ -511,7 +512,9 @@ def _try_load_aug_weights(path: str):
     if not weights_file:
         return None
 
-    weights_path = os.path.join(APP_DIR, weights_file)
+    #weights_path = os.path.join(APP_DIR, weights_file)
+    weights_path = os.path.join(MODEL_DIR, "CNN_Google_Drive_files", weights_file)
+   
     if not os.path.exists(weights_path):
         return None
 
@@ -519,6 +522,7 @@ def _try_load_aug_weights(path: str):
         model = build_aug_cnn_model()
     else:
         model = build_cnn_bn_dropout_model()
+
 
     # Ensure the fallback model is built by running a dummy input through it.
     model(np.zeros((1, 224, 224, 3), dtype=np.float32))
