@@ -868,8 +868,12 @@ with st.sidebar:
         index=8,   # defaults to 6b EffNet+BN
     )
 
-    model_path = os.path.join(APP_DIR, MODEL_FILES[model_choice])
+    #model_path = os.path.join(APP_DIR, MODEL_FILES[model_choice])
+    #model_exists = os.path.exists(model_path)
+
+    model_path = os.path.join(MODEL_DIR, "CNN_Google_Drive_files", MODEL_FILES[model_choice])
     model_exists = os.path.exists(model_path)
+    
 
     if model_exists:
         with st.spinner("Loading model…"):
