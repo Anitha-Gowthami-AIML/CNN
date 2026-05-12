@@ -68,9 +68,7 @@ def download_and_extract():
 
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = download_and_extract()
-# 🔍 DEBUG (add here)
-st.write("MODEL_DIR:", MODEL_DIR)
-st.write("Files:", os.listdir(MODEL_DIR))
+
 # ── VGG16 preprocessing: subtracts ImageNet BGR channel means ──────────────
 # Input: [0, 255]  →  Output: mean-subtracted float32
 try:
@@ -518,7 +516,7 @@ def _try_load_aug_weights(path: str):
         return None
 
     #weights_path = os.path.join(APP_DIR, weights_file)
-    weights_path = os.path.join(MODEL_DIR, "CNN_Google_Drive_files", weights_file)
+    weights_path = os.path.join(MODEL_DIR, "CNN_Google_drive_files", weights_file)
    
     if not os.path.exists(weights_path):
         return None
@@ -876,7 +874,7 @@ with st.sidebar:
     #model_path = os.path.join(APP_DIR, MODEL_FILES[model_choice])
     #model_exists = os.path.exists(model_path)
 
-    model_path = os.path.join(MODEL_DIR, "CNN_Google_Drive_files", MODEL_FILES[model_choice])
+    model_path = os.path.join(MODEL_DIR, "CNN_Google_drive_files", MODEL_FILES[model_choice])
     model_exists = os.path.exists(model_path)
     
 
