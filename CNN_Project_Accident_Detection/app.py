@@ -52,7 +52,7 @@ st.set_page_config(
 @st.cache_resource
 def download_and_extract():
     url = "https://drive.google.com/uc?id=1dCMfht_6eY1FBfYd69AjLTVTEhUcmFIQ"
-    
+              
     zip_path = "CNN_Google_Drive_files.zip"
     extract_path = "model"
 
@@ -68,6 +68,9 @@ def download_and_extract():
 
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_DIR = download_and_extract()
+# 🔍 DEBUG (add here)
+st.write("MODEL_DIR:", MODEL_DIR)
+st.write("Files:", os.listdir(MODEL_DIR))
 # ── VGG16 preprocessing: subtracts ImageNet BGR channel means ──────────────
 # Input: [0, 255]  →  Output: mean-subtracted float32
 try:
