@@ -36,6 +36,24 @@ import tensorflow as tf
 import tensorflow as tf
 import keras
 
+#=========================================== gdown code
+@st.cache_resource
+def download_and_extract():
+    url = "https://drive.google.com/uc?id=1dCMfht_6eY1FBfYd69AjLTVTEhUcmFIQ"
+    
+    zip_path = "CNN_Google_Drive_files.zip"
+    extract_path = "model"
+
+    if not os.path.exists(zip_path):
+        gdown.download(url, zip_path, quiet=False)
+
+    if not os.path.exists(extract_path):
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            zip_ref.extractall(extract_path)
+
+    return extract_path
+  #========================================================================================================
+
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ── VGG16 preprocessing: subtracts ImageNet BGR channel means ──────────────
