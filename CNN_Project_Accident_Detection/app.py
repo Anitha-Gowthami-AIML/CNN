@@ -868,7 +868,7 @@ with st.sidebar:
     model_choice = st.selectbox(
         "Select trained model",
         list(MODEL_FILES.keys()),
-        index=8,   # defaults to 6b EffNet+BN
+        index=0,   # defaults to 6b EffNet+BN
     )
 
     #model_path = os.path.join(APP_DIR, MODEL_FILES[model_choice])
