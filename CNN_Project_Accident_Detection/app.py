@@ -37,6 +37,17 @@ import tensorflow as tf
 import keras
 import gdown
 import zipfile
+
+# ──────────────────────────────────────────────────────────────────────────────
+# PAGE CONFIG
+# ──────────────────────────────────────────────────────────────────────────────
+st.set_page_config(
+    page_title="AccidentAI · CCTV Detection",
+    page_icon="🚨",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
 #=========================================== gdown code
 @st.cache_resource
 def download_and_extract():
@@ -79,15 +90,6 @@ except ImportError:
         preprocess_input as resnet_pre
     )
 
-# ──────────────────────────────────────────────────────────────────────────────
-# PAGE CONFIG
-# ──────────────────────────────────────────────────────────────────────────────
-st.set_page_config(
-    page_title="AccidentAI · CCTV Detection",
-    page_icon="🚨",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
 
 # ──────────────────────────────────────────────────────────────────────────────
 # GOLDEN THEME — injected CSS
