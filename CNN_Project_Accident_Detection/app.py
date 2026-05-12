@@ -56,7 +56,7 @@ def download_and_extract():
   #========================================================================================================
 
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
-
+MODEL_DIR = download_and_extract()
 # ── VGG16 preprocessing: subtracts ImageNet BGR channel means ──────────────
 # Input: [0, 255]  →  Output: mean-subtracted float32
 try:
