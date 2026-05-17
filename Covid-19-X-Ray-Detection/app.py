@@ -82,7 +82,8 @@ def download_and_extract_model():
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
         zip_ref.extractall(extract_path)
 
-    os.remove(zip_path)
+    if zip_path.exists():
+        os.remove(zip_path)
     st.success("✅ Model ready!")
 
 # =========================
