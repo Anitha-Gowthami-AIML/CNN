@@ -1,0 +1,16 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+jupyterlab
+tensorflow
+keras
+torch
+scipy
+ipykernel
+notebook
+statsmodels
+opencv-python
+imbalanced-learn
+gdown
